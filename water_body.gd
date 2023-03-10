@@ -14,7 +14,7 @@ var first_spring
 var last_spring
 
 func _ready():
-	#Prend la scale puis la remplace par la collision size
+	#Donne la scale à la collision pour éviter les problèmes
 	$CollisionShape2D.scale = scale
 	$CollisionShape2D.position = scale / 2
 	
