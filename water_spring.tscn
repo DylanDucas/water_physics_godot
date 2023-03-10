@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2mdjbuniavo6"]
+
+[ext_resource type="Texture2D" uid="uid://bil4p1ncmg2e0" path="res://particle.png" id="1_bqqmv"]
+[ext_resource type="Script" path="res://water_spring.gd" id="1_wdapb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrwmy"]
+size = Vector2(10, 10)
+
+[node name="water_spring" type="Area2D" groups=["mine_react"]]
+script = ExtResource("1_wdapb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_bqqmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yrwmy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
